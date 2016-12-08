@@ -86,8 +86,21 @@ public class BasicTankDrive extends LinearOpMode {
 
             //Datalogging!
             telemetry.addData("Status", "Run Time: " + runtime.toString()); //Tell the user how long the code has been running
-            telemetry.update();                                             //Pushes to terminal
+            telemetry.update();
+            //Pushes to terminal
 
+
+            //capBAll
+            if(gamepad1.a){
+                capBallMotor1.setPower(0.25);
+                capBallMotor2.setPower(0.25);
+            }else if(gamepad1.b){
+                capBallMotor1.setPower(-0.25);
+                capBallMotor2.setPower(-0.25);
+            }else{
+                capBallMotor1.setPower(0);
+                capBallMotor2.setPower(0);
+            }
 /*
             //Movement
             if (!inverted) { //Perform normally if not inverted
